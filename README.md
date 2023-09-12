@@ -4,6 +4,7 @@
 Langkah-langkah : Membuat direktori dan repository baru, kemudian membuat proyek Django dan aplikasi baru dengan nama natlibrary, menambahkan ‘main’ ke direktori settings.py sehingga ada direktori baru yaitu main didalam direktori utama, membuat main.html di direktori tersebut, mengubah models.py sesuai ketentuan soal kemudian menjalankan perintah migrasi, menghubungkan view dengan template  dengan menambahkan function pada views.py, mengubah-ubah routing urls sesuai dengan ketentuan dan path yang sesuai, deploy aplikasi di adaptable.io, terakhir add commit push ke dalam github.
 
 ##  **Bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya**
+<img src="/image//bagan.jpeg">
 Dalam aplikasi Django, ketika seorang pengguna mengirim permintaan ke URL tertentu, berkas urls.py akan mencocokkan URL tersebut dengan fungsi views yang sesuai. Fungsi views di views.py akan mengelola logika bisnis dan berkomunikasi dengan model database yang didefinisikan di models.py jika perlu. Kemudian, data yang diperoleh dari model dapat dimasukkan ke dalam berkas HTML templates untuk merender tampilan halaman web. Respons HTML yang dihasilkan dikirimkan kembali ke pengguna, dan browser klien merender halaman web sesuai dengan respons yang diterima. Dengan demikian, aplikasi Django mengatur aliran informasi dan tampilan dalam respons terhadap permintaan pengguna.
 
 ## **Mengapa menggunakan Virtual Environment? Apakah tetap dapat membuat tanpa Virtual Environment?**

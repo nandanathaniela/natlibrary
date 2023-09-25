@@ -45,3 +45,25 @@ XML by ID
 <img src="/image//XML by ID.png">
 JSON by ID
 <img src="/image//JSON by ID.png">
+
+
+---
+## ---Tugas 3---
+---
+## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
+UserCreationForm disediakan oleh Django untuk memudahkan pengembang web dalam mengimplementasikan fungsionalitas otentikasi pengguna (user authentication) dalam aplikasi untuk membuat akun pengguna dengan informasi dasar seperti nama pengguna (username), alamat email, dan kata sandi (password).
+kelebihan = mudah dan fleksibel
+kekurangan = fitur terbatas, tampilan default, rentan serangan
+
+## **Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
+Autentikasi adalah proses verifikasi identitas pengguna. Otorisasi adalah proses yang menentukan apa yang diizinkan atau tidak diizinkan pengguna lakukan setelah mereka berhasil terautentikasi. Keduanya penting dalam menjaga keamanan dan privasi data pengguna. Jika tidak ada autentikasi, kemungkinan besar akun-akun akan menjadi rentan terhadap peretasan oleh pengguna lain. Sementara itu, tanpa otorisasi, ada potensi bahwa pengguna dapat mengakses informasi pribadi yang seharusnya hanya dapat diakses oleh admin atau pemilik aplikasi.
+
+## **Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?**
+Cookies adalah data yang disimpan pada perangkat saat pengguna berinteraksi dengan aplikasi web. Dalam dunia aplikasi web, cookies berfungsi sebagai penyimpanan sementara pada perangkat pengguna, dan dapat digunakan untuk mengidentifikasi pengguna yang telah terotentikasi, pelacakan preferensi pengguna serta pengelolaan data sesi pengguna. 
+Ketika pengguna masuk ke dalam aplikasi, Django membuat ID unik dan menyimpannya dalam cookie. Kemudian, ketika pengguna melakukan hal lain di aplikasi, Django dapat mengenali pengguna berdasarkan cookie ini dan mengambil data pengguna yang tersimpan di server, seperti keranjang belanja. Namun, sesi ini biasanya memiliki waktu kadaluwarsa yang dapat dikonfigurasi. Ini berarti data sesi akan tetap tersedia selama sesi tersebut masih aktif dan cookie sesi belum kadaluwarsa.
+
+## **Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
+Penggunaan cookies dalam pengembangan web tidak selalu aman secara otomatis. Ada beberapa risiko, seperti data yang tidak aman, pelacakan pengguna, atau serangan.
+
+## **Pengimplementasian checklist secara step-by-step**
+Diawali dengan mengimpor modul yang diperlukan dan membuat fungsi register, login, logout. Membuat implementasi fungsi-fungsi tersebut, membuat berkas html register dan login, mengimpor dan menambahkan path pada urls dari ketiga fungsi. Kemudian menambahkan kode di atas fungsi show_main agar halaman main hanya dapat diakses oleh pengguna yang terautentikasi. Tambahkan informasi cookie last login pada halaman web untuk menambahkan cookie dan menghapus cookie saat pengguna logout. Terakhir, hubungkan model Item dengan user sehingga hanya pengguna yang sedang terotorisasi yang bisa melihat produk-produk yang telah dibuat sendiri degan menambahkan kode pada untuk foreignkey pada models.py.

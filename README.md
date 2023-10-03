@@ -67,3 +67,30 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara otomatis. Ada
 
 ## **Pengimplementasian checklist secara step-by-step**
 Diawali dengan mengimpor modul yang diperlukan dan membuat fungsi register, login, logout. Membuat implementasi fungsi-fungsi tersebut, membuat berkas html register dan login, mengimpor dan menambahkan path pada urls dari ketiga fungsi. Kemudian menambahkan kode di atas fungsi show_main agar halaman main hanya dapat diakses oleh pengguna yang terautentikasi. Tambahkan informasi cookie last login pada halaman web untuk menambahkan cookie dan menghapus cookie saat pengguna logout. Terakhir, hubungkan model Item dengan user sehingga hanya pengguna yang sedang terotorisasi yang bisa melihat produk-produk yang telah dibuat sendiri degan menambahkan kode pada untuk foreignkey pada models.py.
+
+---
+## ---Tugas 3---
+---
+
+## **Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.**
+Type selector : menargetkan objek yang termasuk dalam elemen tersebut atau menerapkan sesuatu pada semua subjek dari elemen tertentu tersebut
+Class selector : menargetkan objek yang memiliki atribut kelas yang sama atau menerapkan modifikasi pada objek yang termasuk dalam kelas yang sama
+ID selector : menargetkan elemen yang memiliki ID tunggal yang sama
+
+## **Jelaskan HTML5 Tag yang kamu ketahui**
+<title>: digunakan untuk menentukan judul halaman web yang akan ditampilkan di judul browser
+<a>: digunakan untuk membuat tautan ke halaman web lain
+<img>: menampilkan gambar di halaman web
+<table>: digunakan untuk membuat tabel yang mengandung data dalam baris dan kolom
+<div>: digunakan untuk mengelompokkan dan mengatur konten secara visual atau untuk menerapkan gaya CSS
+<nav>: digunakan untuk mengelompokkan elemen-elemen yang berisi menu navigasi
+
+## **Jelaskan perbedaan antara margin dan padding**
+Padding: mengosongkan area di sekitar konten (transparan), mengatur ruang di dalam elemen, seperti mengendalikan jarak antara konten dan tepi elemen
+Margin: mengosongkan area di sekitar border (transparan), mengatur jarak antara elemen-elemen dalam tata letak atau mengendalikan ruang di sekitar elemen
+
+## **Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+Tailwind CSS menawarkan fleksibilitas tinggi dengan pendekatan "utility-first" yang memungkinkan tingkat kustomisasi yang tinggi, sementara Bootstrap hadir dengan banyak komponen UI siap pakai yang mempercepat pengembangan proyek tetapi dengan kustomisasi yang lebih terbatas. Bootstrap lebih cocok untuk proyek yang memerlukan pembuatan cepat dengan komponen standar, sementara Tailwind lebih sesuai untuk proyek yang memerlukan desain yang sangat disesuaikan dan minimalis. 
+
+## **Pengimplementasian checklist secara step-by-step**
+Diawali dengan menambahkan kode bootstrap CSS dan JS. Kemudian menambahkan kode untuk navbar di main.html. Menambahkan fitur edit product dan delete product dengan dengan membuat fungsi, membuat path url, dan membuat button seperti tugas-tugas sebelumnya. Terakhir, tambahkan dan modifikasi kode untuk mempercantik tampilan web di dalam folder static/css sesuai dengan halaman-halaman web.

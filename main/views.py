@@ -93,7 +93,7 @@ def logout_user(request):
 
 def edit_product(request, id):
     # Get product berdasarkan ID
-    product = Product.objects.get(pk = id)
+    product = Item.objects.get(pk = id)
 
     # Set product sebagai instance dari form
     form = ProductForm(request.POST or None, instance=product)
@@ -108,7 +108,7 @@ def edit_product(request, id):
 
 def delete_product(request, id):
     # Get data berdasarkan ID
-    product = Product.objects.get(pk = id)
+    product = Item.objects.get(pk = id)
     # Hapus data
     product.delete()
     # Kembali ke halaman awal

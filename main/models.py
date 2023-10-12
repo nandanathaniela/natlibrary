@@ -7,3 +7,4 @@ class Item(models.Model):
     price = models.IntegerField()
     description = models.TextField()
     date_added = models.DateField(auto_now_add=True)
+    image_url = models.TextField()

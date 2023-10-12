@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import *
 from main.forms import ProductForm
 from django.urls import reverse
@@ -15,6 +15,7 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -31,6 +32,13 @@ def show_main(request):
 
     return render(request, "main.html", context)
 
+def get_total(request):
+    if request.user.is_authenticated:
+        total_items = Item.objects.filter(user=request.user).count()
+        return JsonResponse({'total': total_items})
+    else:
+        return JsonResponse({'total': 0})
+    
 def create_product(request):
     form = ProductForm(request.POST or None)
 
@@ -121,14 +129,6 @@ def get_product_json(request):
 
 @csrf_exempt
 def add_product_ajax(request):
-    form = ProductForm(request.POST or None)
-
-    if form.is_valid() and request.method == "POST":
-        product = form.save(commit=False)
-        product.user = request.user
-        product.save()
-        return HttpResponseRedirect(reverse('main:show_main'))
-    
     if request.method == 'POST':
         name = request.POST.get("name")
         price = request.POST.get("price")
@@ -141,4 +141,12 @@ def add_product_ajax(request):
 
         return HttpResponse(b"CREATED", status=201)
 
+    return HttpResponseNotFound()
+
+@csrf_exempt
+def delete_item_ajax(request, id):
+    if request.method == 'DELETE':
+        product = get_object_or_404(Item, pk=id)
+        product.delete()
+        return HttpResponse(b"DELETED", status=200)
     return HttpResponseNotFound()

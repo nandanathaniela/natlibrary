@@ -146,9 +146,9 @@
           <img src=${item.fields.image_url} class="card_img" alt="productimage">
           <div class="card-body">
           <h5 class="card-title" style="font-family: "Times New Roman", Times, serif; font-weight: 700;">${ item.fields.name }</h5>
-          <p class="card-text" style="font-family: "Times New Roman", Times, serif;">${ item.fields.description }</p>
-          <p class="card-text" style="font-family: "Times New Roman", Times, serif;">${ item.fields.price }</p>
-          <p class="card-text" style="font-family: "Times New Roman", Times, serif;">${ item.fields.date_added }</p>
+          <p class="card-text" style="font-family: "Times New Roman", Times, serif;"><strong>Description:</strong> ${ item.fields.description }</p>
+          <p class="card-text" style="font-family: "Times New Roman", Times, serif;"><strong>Price:</strong>${ item.fields.price }</p>
+          <p class="card-text" style="font-family: "Times New Roman", Times, serif;"><strong>Date Added:</strong>${ item.fields.date_added }</p>
           <td>
               <button class="btn btn-primary" onclick="editProduct(${item.pk})">Edit</button>
               <button class="btn btn-danger" data-url="{% url 'main:delete_item_ajax' 123 %}" onclick="deleteProduct(this, ${item.pk})">Delete</button>

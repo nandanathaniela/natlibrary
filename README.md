@@ -48,7 +48,7 @@ JSON by ID
 
 
 ---
-## ---Tugas 3---
+## ---Tugas 4---
 ---
 ## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
 UserCreationForm disediakan oleh Django untuk memudahkan pengembang web dalam mengimplementasikan fungsionalitas otentikasi pengguna (user authentication) dalam aplikasi untuk membuat akun pengguna dengan informasi dasar seperti nama pengguna (username), alamat email, dan kata sandi (password).
@@ -69,7 +69,7 @@ Penggunaan cookies dalam pengembangan web tidak selalu aman secara otomatis. Ada
 Diawali dengan mengimpor modul yang diperlukan dan membuat fungsi register, login, logout. Membuat implementasi fungsi-fungsi tersebut, membuat berkas html register dan login, mengimpor dan menambahkan path pada urls dari ketiga fungsi. Kemudian menambahkan kode di atas fungsi show_main agar halaman main hanya dapat diakses oleh pengguna yang terautentikasi. Tambahkan informasi cookie last login pada halaman web untuk menambahkan cookie dan menghapus cookie saat pengguna logout. Terakhir, hubungkan model Item dengan user sehingga hanya pengguna yang sedang terotorisasi yang bisa melihat produk-produk yang telah dibuat sendiri degan menambahkan kode pada untuk foreignkey pada models.py.
 
 ---
-## ---Tugas 3---
+## ---Tugas 5---
 ---
 
 ## **Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.**
@@ -94,3 +94,31 @@ Tailwind CSS menawarkan fleksibilitas tinggi dengan pendekatan "utility-first" y
 
 ## **Pengimplementasian checklist secara step-by-step**
 Diawali dengan menambahkan kode bootstrap CSS dan JS. Kemudian menambahkan kode untuk navbar di main.html. Menambahkan fitur edit product dan delete product dengan dengan membuat fungsi, membuat path url, dan membuat button seperti tugas-tugas sebelumnya. Terakhir, tambahkan dan modifikasi kode untuk mempercantik tampilan web di dalam folder static/css sesuai dengan halaman-halaman web.
+
+---
+## ---Tugas 6---
+---
+## **Perbedaan  asynchronous programming dan synchronous programming**
+asynchronus programming memungkinkan program untuk menjadi lebih responsif karena untuk mengeksekusi suatu instruksi tidak perlu menunggu sampai instruksi lain selesai dikerjakan. sedangkan di synchronus programming, instruksi dieksekusi satu per satu dalam urutan yang sudah ditentukan sehingga memakan waktu lebih lama.
+
+## **Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+AJAX memanfaatkan paradigma ini dengan cara menentukan callback yang akan dijalankan ketika permintaan jaringan selesai, sehingga aplikasi web tetap responsif selama proses pengambilan data berlangsung. cara kerjanya adalah:
+1. sebuah event terjadi pada halaman web 
+2. Sebuah XMLHttpRequest object dibuat oleh JavaScript
+3. XMLHttpRequest object mengirimkan request ke server
+4. Server memproses request tersebut
+5. Server mengembalikan response kembali kepada halaman web
+6. Response dibaca oleh JavaScript
+7. Aksi berikutnya akan dipicu oleh JavaScript sesuai dengan langkah yang dibuat (contohnya memperbarui data di halaman tersebut)
+contoh penerapannya adalah pembuatan button dan function add product by ajax yang memungkinkan website terupdate tanpa harus direfresh secara manual karena ajax mengirimkan data di balik layar.
+
+## **Jelaskan penerapan asynchronous programming pada AJAX.**
+program dilakukan secara asinkron sehingga website tetap responsif selama ada permintaan berlangsung. Dengan menggunakan callback functions dan event handling, data yang diterima dari server dapat diolah tanpa menghentikan eksekusi program utama. Selama operasi pengambilan data berlangsung, pengguna masih dapat berinteraksi dengan halaman web tanpa terblokir. Hal tersebut berarti bahwa kita dapat memperbarui sebagian elemen data pada halaman tanpa harus me-reload halaman secara keseluruhan.
+
+## **Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+Fetch API membuat request dengan promise dan menghindari dai callback hell. Metode fetchl() mengambil satu argumen wajib, yaitu jalur ke sumber yang ingin diambil. Ini mengembalikan promise yang menyelesaikan Respon terhadap permintaan itu, segera setelah server merespons dengan header, bahkan jika respons server adalah status kesalahan HTTP. 
+Jquery merupakan sebuah library yang menggunakan callback-based approach, di mana program mendefinisikan fungsi callback yang akan dijalankan ketika request selesai.
+Untuk mengembangkan aplikasi web modern dengan kebutuhan fitur minimalis dan berfokus pada performa, Fetch API bisa menjadi pilihan yang baik karena lebih ringan. Namun, jika perlu memiliki banyak kebutuhan untuk manipulasi DOM dan animasi, jQuery dapat menghemat waktu. 
+
+## **Pengimplementasian checklist secara step-by-step**
+diawali dengan membuat fungsi untuk mengembalikan data json dan fungsi untuk menambahkan produk dengan ajax dan dilanjutkan dengan routing urls.py untuk kedua fungsi tsb. kemudian ubah kode tabel menjadi tabel dengan id untuk dipanggil pada script. buat block script yang berisi function-function async untuk get,add,delete,refresh products, dan refresh cards. terakhir, tambahkan modal bootstrap dan button pada main.html.

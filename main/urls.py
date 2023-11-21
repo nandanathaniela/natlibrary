@@ -9,7 +9,7 @@ from main.views import login_user
 from main.views import logout_user
 from main.views import edit_product
 from main.views import delete_product
-from main.views import get_product_json,add_product_ajax, delete_item_ajax
+from main.views import get_product_json,add_product_ajax, delete_item_ajax, create_product_flutter
 from . import views
 
 app_name = 'main'
@@ -30,4 +30,5 @@ urlpatterns = [
     path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
     path('delete-item-ajax/<int:id>/', delete_item_ajax, name='delete_item_ajax'),
     path('get_total/', views.get_total, name='get_total'),
+    path('create-flutter/', create_product_flutter, name='create_product_flutter'),
 ]
